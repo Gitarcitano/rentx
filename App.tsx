@@ -8,6 +8,7 @@ import {
 } from '@expo-google-fonts/archivo';
 import { useFonts, Inter_400Regular, Inter_500Medium } from '@expo-google-fonts/inter';
 import AppLoading from 'expo-app-loading';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { ThemeProvider } from 'styled-components/native';
 
 import { Home } from './src/screens/Home';
@@ -28,7 +29,9 @@ export default function App(): JSX.Element {
 
   return (
     <ThemeProvider theme={theme}>
-      <Home />
+      <SafeAreaProvider>
+        <Home />
+      </SafeAreaProvider>
     </ThemeProvider>
   );
 }
