@@ -1,6 +1,11 @@
-import React from "react";
-import { Text } from "react-native";
+import React from 'react';
+
+import { Container, Title } from './styles';
 
 export function Home(): JSX.Element {
-  return <Text>Teste</Text>;
+  return (
+    <Container>
+      <Title>Home</Title>
+    </Container>
+  );
 }
