@@ -10,6 +10,7 @@ import PeopleSvg from '../../assets/people.svg';
 import SpeedSvg from '../../assets/speed.svg';
 import { Accessory } from '../../components/Accessory';
 import { BackButton } from '../../components/BackButton';
+import { Button } from '../../components/Button';
 import { ImageSlider } from '../../components/ImageSlider';
 import { SafeArea } from '../../components/SafeArea';
 import {
@@ -25,6 +26,7 @@ import {
   Price,
   About,
   Accessories,
+  Footer,
 } from './styles';
 
 export function CarDetails(): JSX.Element {
@@ -73,6 +75,9 @@ export function CarDetails(): JSX.Element {
             Maestranza de Sevilla. É um belíssimo carro para quem gosta de acelerar.
           </About>
         </Content>
+        <Footer>
+          <Button title="confirmar" />
+        </Footer>
       </Container>
     </SafeArea>
   );
