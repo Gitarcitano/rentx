@@ -1,5 +1,7 @@
 import { RFValue } from 'react-native-responsive-fontsize';
-import styled from 'styled-components/native';
+import styled, { css } from 'styled-components/native';
+
+import { DateValueProps } from './interface';
 
 export const Container = styled.View`
   flex: 1;
@@ -12,10 +14,7 @@ export const Header = styled.View`
 
   background-color: ${({ theme }) => theme.colors.header};
 
-  /* justify-content: center; */
   padding: 24px;
-
-  /* border: 1px red; */
 `;
 
 export const Title = styled.Text`
@@ -32,6 +31,8 @@ export const RentalPeriod = styled.View`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+
+  margin: 32px 0;
 `;
 
 export const DateInfo = styled.View`
@@ -44,8 +45,29 @@ export const DateTitle = styled.Text`
   font-size: ${RFValue(10)}px;
 `;
 
-export const DateValue = styled.Text`
+export const DateValue = styled.Text<DateValueProps>`
   color: ${({ theme }) => theme.colors.shape};
   font-family: ${({ theme }) => theme.fonts.primary_500};
   font-size: ${RFValue(15)}px;
+
+  ${({ isSelected, theme }) =>
+    !isSelected &&
+    css`
+      border-bottom-width: 1px;
+      border-bottom-color: ${theme.colors.text};
+      padding-bottom: 5px;
+    `};
+`;
+
+export const Content = styled.ScrollView.attrs({
+  contentContainerStyle: {
+    paddingBottom: 24,
+  },
+  showsVerticalScrollIndicator: false,
+})`
+  flex: 1;
+`;
+
+export const Footer = styled.View`
+  margin: 24px;
 `;
