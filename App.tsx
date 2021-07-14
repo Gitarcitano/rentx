@@ -12,7 +12,7 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { ThemeProvider } from 'styled-components/native';
 
 // import { Home } from './src/screens/Home';
-import { Schedules } from './src/screens/Schedules';
+import { ScheduleDetails } from './src/screens/ScheduleDetails';
 import theme from './src/styles/theme';
 
 export default function App(): JSX.Element {
@@ -32,7 +32,7 @@ export default function App(): JSX.Element {
     <ThemeProvider theme={theme}>
       <SafeAreaProvider>
         {/* <Home /> */}
-        <Schedules />
+        <ScheduleDetails />
       </SafeAreaProvider>
     </ThemeProvider>
   );
